@@ -1,0 +1,1 @@
+const chooses = [ Rock, Paper, Scissors]
