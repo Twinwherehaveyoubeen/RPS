@@ -1,6 +1,6 @@
 let playerscore = 0
 let computerscore = 0 
-let tie 
+let tie = 0
 
 function random(){
     const chooses = [ "Rock" , "Paper", "Scissors"]
@@ -11,7 +11,7 @@ function RPS(PC){
     const computerchoice = random()
     let result 
      if ( PC === computerchoice ){
-            result = "Tie"
+            result = "Tie score"
             tie++
      }else if (
         (PC === 'Rock' && computerchoice ==='Scissors')||
@@ -20,9 +20,16 @@ function RPS(PC){
      ){
         result = "Players Point"
         playerscore++
-     } else{
+     } 
+     else{
             result = "Computers Point"
             computerscore++
      }
+     Gainpoints()
 }
 
+function Gainpoints(){
+    document.getElementById('PR').textContent = "Player's Score" + playerscore
+    document.getElementById('CPR').textContent = "Computer's Score" + computerscore
+    document.getElementById('Tie').textContent = "Tie score" + tie
+}
